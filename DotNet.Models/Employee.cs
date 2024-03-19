@@ -13,7 +13,14 @@ public class Employee
     [Required]
     public string LastName { get; set; }
     [Required]
+    [EmailAddress]
     public string Email { get; set; }
+    [Required]
+    [EmailAddress]
+    [NotMapped]
+    [Compare("Email",
+        ErrorMessage = "Email and Confirm Email must match")]
+    public string ConfirmEmail { get; set; }
     [Required]
     public DateTime DateOfBrith { get; set; }
     [Required]

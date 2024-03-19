@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dotnet.Blazor.ServerApp.Sam
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dotnet.WebApiCore.Sample", "Dotnet.WebApiCore.Sample\Dotnet.WebApiCore.Sample.csproj", "{D15BA176-F5F6-40D1-AFD2-5C98C9AB3CBD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNet.Models", "DotNet.Models\DotNet.Models.csproj", "{FD5747C8-971D-4D8A-9B21-9DB0982E027F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNet.Models", "DotNet.Models\DotNet.Models.csproj", "{FD5747C8-971D-4D8A-9B21-9DB0982E027F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
