@@ -12,9 +12,12 @@ namespace Azure.Blob.Web.Sample.Controllers
 
         private readonly IStorage storage;
 
-        public FilesController(IStorage storage)
+        private readonly IQueueStorage queueStorage;
+
+        public FilesController(IStorage storage, IQueueStorage queueStorage)
         {
             this.storage = storage;
+            this.queueStorage = queueStorage;
         }
 
         // GET /api/Files
@@ -69,6 +72,12 @@ namespace Azure.Blob.Web.Sample.Controllers
             return File(stream, "application/octet-stream", filename);
         }
 
+        [HttpPost("WriteMessage")]
+        public async Task<IActionResult> WriteMessage(string Message)
+        {
+            return Accepted();
+        }
+
         private static string SanitizeFilename(string filename)
         {
             var sanitizedFilename = filenameRegex.Replace(filename, "").TrimEnd('.');
@@ -80,5 +89,7 @@ namespace Azure.Blob.Web.Sample.Controllers
 
             return sanitizedFilename;
         }
+
+
     }
 }

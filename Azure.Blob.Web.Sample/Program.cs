@@ -18,6 +18,13 @@ builder.Services.AddSingleton<IStorage>(serviceProvider => {
     return blobStorage;
 });
 
+builder.Services.AddSingleton<IQueueStorage>(serviceProvider =>
+{
+    var queueStorage = new QueueStorage(serviceProvider.GetService<IOptions<AzureStorageConfig>>());
+    queueStorage.Initialize().GetAwaiter().GetResult();
+    return queueStorage;
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
